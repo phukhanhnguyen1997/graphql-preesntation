@@ -13,7 +13,7 @@ import { makeExecutableSchema } from "@graphql-tools/schema";
 // connect MongoDB
 
 const connectDB = async () => {
-  const mongoUrl = `mongodb+srv://phukhanhnguyen1997:WEhDgb1WWct2yis6@graphql.jvdid.mongodb.net/?retryWrites=true&w=majority`;
+  const mongoUrl = process.env.MONGO_DB_URL;
   await mongoose.connect(mongoUrl, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
